@@ -1,11 +1,10 @@
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const passwordConfirm = document.getElementById('password-confirm');
-const passwordFields = document.querySelectorAll(`input[type="password"]`);
-const fieldIcon = document.querySelectorAll('.field-icon');
-console.log(passwordFields);
+const $form = document.getElementById('form');
+const $username = document.getElementById('username');
+const $email = document.getElementById('email');
+const $password = document.getElementById('password');
+const $passwordConfirm = document.getElementById('password-confirm');
+const $passwordFields = document.querySelectorAll(`input[type="password"]`);
+const $fieldIcon = document.querySelectorAll('.field-icon');
 const CONFIG = {
     usernameMinLength: 3,
     usernameMaxLength: 15,
@@ -16,8 +15,8 @@ const CONFIG = {
 function showError(input, message) {
     const formControl = input.parentElement;
     formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerText = message;
+    const $small = formControl.querySelector('small');
+    $small.innerText = message;
 }
 
 function showSuccess(input) {
@@ -95,13 +94,13 @@ function checkRequired(inputArr) {
 // }
 
 function setEventListeners() {
-    form.addEventListener('submit', (evt) => {
+    $form.addEventListener('submit', (evt) => {
         evt.preventDefault();
-        checkRequired([username, email, password, passwordConfirm]);
-        checkFieldLength(username, CONFIG.usernameMinLength, CONFIG.usernameMaxLength);
-        checkFieldLength(password, CONFIG.passwordMinLength, CONFIG.passwordMaxLength);
-        checkIfEmailIsProper(email);
-        checkPasswordsMatch(password, passwordConfirm);
+        checkRequired([$username, $email, $password, $passwordConfirm]);
+        checkFieldLength($username, CONFIG.usernameMinLength, CONFIG.usernameMaxLength);
+        checkFieldLength($password, CONFIG.passwordMinLength, CONFIG.passwordMaxLength);
+        checkIfEmailIsProper($email);
+        checkPasswordsMatch($password, $passwordConfirm);
     });
     // fieldIcon.forEach(icon => {
     //     icon.addEventListener('click', (evt) => {
