@@ -10,6 +10,7 @@ const CONFIG = {
     passwordMinLength: 6,
     passwordMaxLength: 25
 }
+console.log($password.className);
 
 function showError(input, message) {
     const formControl = input.parentElement;
@@ -25,10 +26,11 @@ function showSuccess(input) {
 }
 
 function getFieldName(input) {
-    if (!input.id.includes("-")) {
-        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+    input = input.className;
+    if (!input.includes("-")) {
+        return input.charAt(0).toUpperCase() + input.slice(1);
     } else {
-        return input.id.charAt(0).toUpperCase() + input.id.slice(1).replace("-", " ");
+        return input.charAt(0).toUpperCase() + input.slice(1).replace("-", " ");
     }
 }
 
@@ -61,6 +63,7 @@ function checkPasswordsMatch(input1, input2) {
 
 function checkRequired(inputArr) {
     inputArr.forEach((input) => {
+        console.log(input);
         return input.value.trim() === '' ? showError(input, `${getFieldName(input)} is required`) : showSuccess(input);
     })
 }
