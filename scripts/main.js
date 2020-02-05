@@ -63,7 +63,6 @@ function checkPasswordsMatch(input1, input2) {
 
 function checkRequired(inputArr) {
     inputArr.forEach((input) => {
-        console.log(input);
         return input.value.trim() === '' ? showError(input, `${getFieldName(input)} is required`) : showSuccess(input);
     })
 }
