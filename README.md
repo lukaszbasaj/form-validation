@@ -13,4 +13,4 @@ Simple client side form validation. Check required, length, email and password m
 - showPassword() to see plain password
 - toggleIcon() to change eye icon if showPassword() is called
 
-See demo: <https://form-validation.lukaszbasaj.now.sh>
+See demo: <https://form-validation-lukaszbasaj.vercel.app/>
