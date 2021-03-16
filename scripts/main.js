@@ -10,7 +10,6 @@ const CONFIG = {
     passwordMinLength: 6,
     passwordMaxLength: 25
 }
-console.log($password.className);
 
 function showError(input, message) {
     const formControl = input.parentElement;
